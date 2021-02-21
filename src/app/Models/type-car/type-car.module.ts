@@ -9,4 +9,7 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class TypeCarModule { }
+export class TypeCarModule {
+  TypeCarID: number;
+  NameType: string;
+ }

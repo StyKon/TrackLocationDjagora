@@ -9,4 +9,15 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class UserModule { }
+export class UserModule {
+  UserId: number;
+  FirstName: string;
+  LastName: string;
+  Email: string;
+  Cin: string;
+  NumTel: string;
+  NumPassport: string;
+  Password: string;
+  TypeUser: string;
+  token: string;
+}

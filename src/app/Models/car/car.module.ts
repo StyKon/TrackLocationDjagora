@@ -9,4 +9,15 @@ import { CommonModule } from '@angular/common';
     CommonModule
   ]
 })
-export class CarModule { }
+export class CarModule {
+  CarID: number;
+  NameCar: string;
+  Puissance: number;
+  NumberPlace: number;
+  Matricule: number;
+  DateCirculation: Date;
+  TotKm: number;
+  FamilyCarID: number;
+  UserID: number;
+  TypeCarID: number;
+ }
