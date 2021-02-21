@@ -4,12 +4,6 @@
     "codelyzer"
   ],
   "rules": {
-    "align": {
-      "options": [
-        "parameters",
-        "statements"
-      ]
-    },
     "array-type": false,
     "arrow-return-shorthand": true,
     "curly": true,
