@@ -46,7 +46,7 @@ export class AuthService {
     }
   }
 
-  handleError(error: HttpErrorResponse) {
+  handleError(error: HttpErrorResponse): any {
     let msg = '';
     if (error.error instanceof ErrorEvent) {
       // client-side error

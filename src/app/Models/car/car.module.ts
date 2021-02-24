@@ -20,4 +20,4 @@ export class CarModule {
   FamilyCarID: number;
   UserID: number;
   TypeCarID: number;
- }
+}
