@@ -18,6 +18,9 @@ import { EditTypeCarComponent } from './Views/TypeCar/edit-type-car/edit-type-ca
 import { EditUserComponent } from './Views/User/edit-user/edit-user.component';
 import { AddUserComponent } from './Views/User/add-user/add-user.component';
 import { IndexUserComponent } from './Views/User/index-user/index-user.component';
+import { FooterComponent } from './Views/footer/footer.component';
+import { NavbarComponent } from './Views/navbar/navbar.component';
+import { LeftbarComponent } from './Views/leftbar/leftbar.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { IndexUserComponent } from './Views/User/index-user/index-user.component
     EditTypeCarComponent,
     EditUserComponent,
     AddUserComponent,
-    IndexUserComponent
+    IndexUserComponent,
+    FooterComponent,
+    NavbarComponent,
+    LeftbarComponent
   ],
   imports: [
     BrowserModule,
