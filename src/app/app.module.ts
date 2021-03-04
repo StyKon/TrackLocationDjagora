@@ -3,39 +3,39 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { AddCarComponent } from './Views/add-car/add-car.component';
-import { AddFamilyCarComponent } from './Views/add-family-car/add-family-car.component';
-import { AddLocationComponent } from './Views/add-location/add-location.component';
-import { AddTypeCarComponent } from './Views/add-type-car/add-type-car.component';
-import { AddUserComponent } from './Views/add-user/add-user.component';
-import { EditCarComponent } from './Views/edit-car/edit-car.component';
-import { EditFamilyCarComponent } from './Views/edit-family-car/edit-family-car.component';
-import { EditLocationComponent } from './Views/edit-location/edit-location.component';
-import { EditTypeCarComponent } from './Views/edit-type-car/edit-type-car.component';
-import { EditUserComponent } from './Views/edit-user/edit-user.component';
-import { IndexCarComponent } from './Views/index-car/index-car.component';
-import { IndexFamilyCarComponent } from './Views/index-family-car/index-family-car.component';
-import { IndexLocationComponent } from './Views/index-location/index-location.component';
-import { IndexTypeCarComponent } from './Views/index-type-car/index-type-car.component';
-import { IndexUserComponent } from './Views/index-user/index-user.component';
+import { AddCarComponent } from './Views/Car/add-car/add-car.component';
+import { EditCarComponent } from './Views/Car/edit-car/edit-car.component';
+import { IndexCarComponent } from './Views/Car/index-car/index-car.component';
+import { IndexFamilyCarComponent } from './Views/FamilyCar/index-family-car/index-family-car.component';
+import { EditFamilyCarComponent } from './Views/FamilyCar/edit-family-car/edit-family-car.component';
+import { AddFamilyCarComponent } from './Views/FamilyCar/add-family-car/add-family-car.component';
+import { AddLocationComponent } from './Views/Location/add-location/add-location.component';
+import { EditLocationComponent } from './Views/Location/edit-location/edit-location.component';
+import { IndexLocationComponent } from './Views/Location/index-location/index-location.component';
+import { IndexTypeCarComponent } from './Views/TypeCar/index-type-car/index-type-car.component';
+import { AddTypeCarComponent } from './Views/TypeCar/add-type-car/add-type-car.component';
+import { EditTypeCarComponent } from './Views/TypeCar/edit-type-car/edit-type-car.component';
+import { EditUserComponent } from './Views/User/edit-user/edit-user.component';
+import { AddUserComponent } from './Views/User/add-user/add-user.component';
+import { IndexUserComponent } from './Views/User/index-user/index-user.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddCarComponent,
-    AddFamilyCarComponent,
-    AddLocationComponent,
-    AddTypeCarComponent,
-    AddUserComponent,
     EditCarComponent,
-    EditFamilyCarComponent,
-    EditLocationComponent,
-    EditTypeCarComponent,
-    EditUserComponent,
     IndexCarComponent,
     IndexFamilyCarComponent,
+    EditFamilyCarComponent,
+    AddFamilyCarComponent,
+    AddLocationComponent,
+    EditLocationComponent,
     IndexLocationComponent,
     IndexTypeCarComponent,
+    AddTypeCarComponent,
+    EditTypeCarComponent,
+    EditUserComponent,
+    AddUserComponent,
     IndexUserComponent
   ],
   imports: [
