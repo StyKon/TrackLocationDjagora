@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
 import { AddCarComponent } from './Views/Car/add-car/add-car.component';
 import { EditCarComponent } from './Views/Car/edit-car/edit-car.component';
 import { IndexCarComponent } from './Views/Car/index-car/index-car.component';
@@ -21,6 +22,8 @@ import { IndexUserComponent } from './Views/User/index-user/index-user.component
 import { FooterComponent } from './Views/footer/footer.component';
 import { NavbarComponent } from './Views/navbar/navbar.component';
 import { LeftbarComponent } from './Views/leftbar/leftbar.component';
+import { ConfirmationDialogComponent } from './Views/confirmation-dialog/confirmation-dialog.component';
+
 
 @NgModule({
   declarations: [
@@ -42,10 +45,14 @@ import { LeftbarComponent } from './Views/leftbar/leftbar.component';
     IndexUserComponent,
     FooterComponent,
     NavbarComponent,
-    LeftbarComponent
+    LeftbarComponent,
+    ConfirmationDialogComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

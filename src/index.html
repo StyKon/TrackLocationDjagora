@@ -8,6 +8,9 @@
   <!-- Vector CSS -->
   <link href="./assets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
   <link href="./assets/assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+  <link href="./assets/assets/plugins/bootstrap-datatable/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css">
+  <link href="./assets/assets/plugins/bootstrap-datatable/css/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css">
+
   <!-- simplebar CSS-->
   <link href="./assets/assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
   <!-- Bootstrap core CSS-->
@@ -39,7 +42,34 @@
  <script src="./assets/assets/js/jquery.min.js"></script>
  <script src="./assets/assets/js/popper.min.js"></script>
  <script src="./assets/assets/js/bootstrap.min.js"></script>
+<!--Data Tables js-->
+<script src="./assets/assets/plugins/bootstrap-datatable/js/jquery.dataTables.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/dataTables.bootstrap4.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/dataTables.buttons.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/buttons.bootstrap4.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/jszip.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/pdfmake.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/vfs_fonts.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/buttons.html5.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/buttons.print.min.js"></script>
+<script src="./assets/assets/plugins/bootstrap-datatable/js/buttons.colVis.min.js"></script>
+ <script>
+   $(document).ready(function() {
+    //Default data table
+     $('#default-datatable').DataTable();
 
+
+     var table = $('#example').DataTable( {
+      lengthChange: false,
+      buttons: [ 'copy', 'excel', 'pdf', 'print', 'colvis' ]
+    } );
+
+   table.buttons().container()
+      .appendTo( '#example_wrapper .col-md-6:eq(0)' );
+
+    } );
+
+  </script>
 <!-- simplebar js -->
  <script src="./assets/assets/plugins/simplebar/js/simplebar.js"></script>
  <!-- sidebar-menu js -->
@@ -60,7 +90,22 @@
  <script src="./assets/assets/plugins/sparkline-charts/jquery.sparkline.min.js"></script>
  <script src="./assets/assets/plugins/jquery-knob/excanvas.js"></script>
  <script src="./assets/assets/plugins/jquery-knob/jquery.knob.js"></script>
-
+ <!--Multi Select Js-->
+ <script src="./assets/assets/plugins/jquery-multi-select/jquery.multi-select.js"></script>
+ <script src="./assets/assets/plugins/jquery-multi-select/jquery.quicksearch.js"></script>
+  <!--Bootstrap Touchspin Js-->
+ <script src="./assets/assets/plugins/bootstrap-touchspin/js/jquery.bootstrap-touchspin.js"></script>
+ <script src="./assets/assets/plugins/bootstrap-touchspin/js/bootstrap-touchspin-script.js"></script>
+   <!--Select Plugins-->
+<link href="./assets/assets/plugins/select2/css/select2.min.css" rel="stylesheet"/>
+<!--inputtags-->
+<link href="./assets/assets/plugins/inputtags/css/bootstrap-tagsinput.css" rel="stylesheet" />
+<!--multi select-->
+<link href="./assets/assets/plugins/jquery-multi-select/multi-select.css" rel="stylesheet" type="text/css">
+ <!--Select Plugins Js-->
+ <script src="./assets/assets/plugins/select2/js/select2.min.js"></script>
+ <!--Inputtags Js-->
+ <script src="./assets/assets/plugins/inputtags/js/bootstrap-tagsinput.js"></script>
 
    <script>
        $(function() {

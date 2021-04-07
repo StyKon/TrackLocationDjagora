@@ -1,1 +1,115 @@
-<p>add-car works!</p>
+<app-navbar></app-navbar>
+<app-leftbar></app-leftbar>
+<div class="clearfix"></div>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+    <!-- Breadcrumb-->
+     <div class="row pt-2 pb-2">
+        <div class="col-sm-9">
+		    <h4 class="page-title">Form Layouts</h4>
+		    <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javaScript:void();">Dashtreme</a></li>
+            <li class="breadcrumb-item"><a href="javaScript:void();">Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form Layouts</li>
+         </ol>
+	   </div>
+
+     </div>
+    <!-- End Breadcrumb-->
+          <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <form id="personal-info">
+                <h4 class="form-header text-uppercase">
+                  <i class="fa fa-car"></i>
+                   Personal Car Info
+                </h4>
+                <div class="form-group row">
+                  <label for="input-1" class="col-sm-2 col-form-label">Name of Model</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-1" name="fname" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-2" class="col-sm-2 col-form-label">Power</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-2" name="lname" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-3" class="col-sm-2 col-form-label">Place Number</label>
+                  <div class="col-sm-10">
+                    <input type="number" class="form-control form-control-rounded" id="input-3" name="PlaceNumber" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-4" class="col-sm-2 col-form-label">Registration number</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-4" name="phone" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="input-5" class="col-sm-2 col-form-label">Date Of Circulation</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-5" name="company" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="input-5" class="col-sm-2 col-form-label">Sum of KMs</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-5" name="TotKm" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-6" class="col-sm-2 col-form-label">Model</label>
+                  <div class="col-sm-10">
+                    <select class="form-control single-select">
+                          <option value="0">Make</option>
+                          <option value="1">BMW</option>
+                          <option value="2">Daewoo</option>
+                          <option value="3">Ford</option>
+                          <option value="4">Holden</option>
+                          <option value="5">Honda</option>
+                          <option value="6">Hyundai</option>
+                          <option value="7">Isuzu</option>
+                          <option value="8">Kia</option>
+                          <option value="9">Lexus</option>
+                          <option value="10">Mazda</option>
+                          <option value="11">Mitsubishi</option>
+                          <option value="12">Nissan</option>
+                          <option value="13">Peugeot</option>
+                          <option value="14">Subaru</option>
+                          <option value="15">Suzuki</option>
+                          <option value="16">Toyota</option>
+                          <option value="17">Volkswagen</option>
+                          <option value="18">Renault</option>
+                          <option value="17">Lamborghini</option>
+                      </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-7" class="col-sm-2 col-form-label">Type Car</label>
+                  <div class="col-sm-10">
+                    <select class="form-control single-select" id="input-7" name="budget" required>
+                        <option>Sport</option>
+                        <option>Classic</option>
+                        <option>4*4</option>
+
+                    </select>
+                  </div>
+                </div>
+
+
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i> CANCEL</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> SAVE</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

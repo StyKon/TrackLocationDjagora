@@ -1,1 +1,78 @@
-<p>index-type-car works!</p>
+<app-navbar></app-navbar>
+<app-leftbar></app-leftbar>
+<div class="clearfix"></div>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+    <!-- Breadcrumb-->
+     <div class="row pt-2 pb-2">
+        <div class="col-sm-9">
+		    <h4 class="page-title">Form Layouts</h4>
+		    <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javaScript:void();">Dashtreme</a></li>
+            <li class="breadcrumb-item"><a href="javaScript:void();">Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form Layouts</li>
+         </ol>
+	   </div>
+
+     </div>
+    <!-- End Breadcrumb-->
+
+
+    <div class="row">
+      <div class="col-lg-4">
+         <div class="card">
+           <div class="card-body">
+           <div class="card-title">Type Car</div>
+           <hr>
+           <form [formGroup]="submitForm" (ngSubmit)="onSubmit()">
+           <div class="form-group">
+            <label for="input-1">Type</label>
+            <input type="text" formControlName="NameType" [ngModel]="tp.nameType" class="form-control form-control-rounded" name="NameType" id="NameType" placeholder="Enter Type Car" required>
+           </div>
+           <div class="form-group">
+            <button type="submit" class="btn btn-primary px-5"><i class="icon-lock"></i>Save</button>
+          </div>
+          </form>
+         </div>
+         </div>
+      </div>
+
+      <div class="col-lg-8">
+         <div class="card">
+            <div class="card-header"><i class="fa fa-table"></i> List Type Cars </div>
+            <div class="card-body">
+              <div class="table-responsive">
+              <table id="default-datatable" class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th> Actions </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let typeCar of typeCars; let i = index" [attr.data-index]="i">
+                        <td> {{i}} </td>
+                        <td>{{ typeCar.nameType}}</td>
+                        <td>
+                          <button type="button"  (click)="editClick(typeCar)" class="btn btn-outline-warning waves-effect waves-light m-1"> <i class="fa fa-edit"></i> <span>Edit</span> </button>
+                         <button type="button" (click)="openConfirmationDialog(typeCar.typeCarId)" class="btn btn-outline-danger waves-effect waves-light m-1"> <i class="fa fa fa-trash-o"></i> <span>Delete</span> </button>
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <th>ID</th>
+                        <th>Type</th>
+                        <th>Actions </th>
+                    </tr>
+                </tfoot>
+            </table>
+            </div>
+            </div>
+          </div>
+      </div>
+    </div><!--End Row-->
+</div>
+<!-- End container-fluid-->

@@ -1,1 +1,91 @@
-<p>add-user works!</p>
+<app-navbar></app-navbar>
+<app-leftbar></app-leftbar>
+<div class="clearfix"></div>
+
+  <div class="content-wrapper">
+    <div class="container-fluid">
+    <!-- Breadcrumb-->
+     <div class="row pt-2 pb-2">
+        <div class="col-sm-9">
+		    <h4 class="page-title">Form Layouts</h4>
+		    <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javaScript:void();">Dashtreme</a></li>
+            <li class="breadcrumb-item"><a href="javaScript:void();">Forms</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Form Layouts</li>
+         </ol>
+	   </div>
+
+     </div>
+    <!-- End Breadcrumb-->
+          <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-body">
+              <form [formGroup]="submitForm" (ngSubmit)="onSubmit()" id="personal-info">
+                <h4 class="form-header text-uppercase">
+                  <i class="fa fa-user"></i>
+                   Add User
+                </h4>
+                <div class="form-group row">
+                  <label for="input-1" class="col-sm-2 col-form-label">Fisrt Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-1" formControlName="FirstName" name="FirstName" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-2" class="col-sm-2 col-form-label">Last Name</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-2" formControlName="LastName" name="LastName" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-3" class="col-sm-2 col-form-label">Email</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded"  formControlName="Email" id="input-3" name="Email" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-4" class="col-sm-2 col-form-label">Cin</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-4" formControlName="Cin" name="Cin" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="input-5" class="col-sm-2 col-form-label">Phone</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-5" formControlName="NumTel" name="NumTel" required>
+                  </div>
+                </div>
+
+                <div class="form-group row">
+                  <label for="input-5" class="col-sm-2 col-form-label">Numero Passport</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-5" formControlName="NumPassport" name="NumPassport" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-5" class="col-sm-2 col-form-label">Password</label>
+                  <div class="col-sm-10">
+                    <input type="text" class="form-control form-control-rounded" id="input-5" formControlName="Password" name="Password" required>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="input-6" class="col-sm-2 col-form-label">Type User</label>
+                  <div class="col-sm-10">
+                    <select name="TypeUser" formControlName="TypeUser" class="form-control single-select">
+                          <option value="ADMIN">Admin</option>
+                      </select>
+                  </div>
+                </div>
+
+
+                <div class="form-footer">
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-times"></i> CANCEL</button>
+                    <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i> SAVE</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>

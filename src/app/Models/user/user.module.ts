@@ -19,5 +19,4 @@ export class UserModule {
   NumPassport: string;
   Password: string;
   TypeUser: string;
-  token: string;
 }
