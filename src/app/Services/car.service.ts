@@ -1,41 +1,40 @@
 import { Injectable } from '@angular/core';
 import { HttpParams, HttpClient, HttpHeaders } from '@angular/common/http';
-import { TokenService } from './token.service';
 import { Router} from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { CarModule } from '../Models/car/car.module';
-const API_PATH = 'http://localhost:5000/api/';
+const API_PATH = 'http://localhost:5000/api/Cars';
 const httpOptions = {
-  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+  headers: new HttpHeaders({
+    'Content-Type':  'application/json',
+    'Access-Control-Allow-Credentials' : 'true',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET, POST, PATCH, DELETE, PUT, OPTIONS',
+    'Access-Control-Allow-Headers': 'Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With',
+  })
 };
 @Injectable({
   providedIn: 'root'
 })
 export class CarService {
 
-  constructor(private http: HttpClient, private router: Router , private token: TokenService ) { }
-   // to get all cars in the Database
-   getListCar(): Observable<CarModule[]>{
-    return this.http.get<CarModule[]>(API_PATH + 'Cars', {responseType: 'json'});
-   }
-   // to get all cars from one user
-   getUseCars(userid): Observable<CarModule[]>{
-    return this.http.get<CarModule[]>(API_PATH + 'UserCars/' + userid , {responseType: 'json'});
-   }
-   // to get specifique car from one user
-   getUserCar(userid: any , carid: any): Observable<CarModule[]>{
-    return this.http.get<CarModule[]>(API_PATH + 'UserCars/' + userid + '/' + carid, {responseType: 'json'});
-    }
-   // ADD car for specifique user
-   addUserCar(car): Observable<CarModule>{
-      return this.http.post<CarModule>(API_PATH + 'Cars', car);
-   }
-   // Edite Car User
-   editeUserCar(userid: any , carid: any): Observable<CarModule>{
-    return this.http.put<CarModule>(API_PATH + 'UserCars/' + userid + '/' + carid, {responseType: 'json'});
-   }
-   // delete car user
-   deleteUserCar(userid: any, carid: any): Observable<CarModule>{
-    return this.http.delete<CarModule>(API_PATH + 'UserCars/' + userid + '/' + carid, {responseType: 'json'});
-   }
+  formData: CarModule;
+  CarId: number;
+  constructor(private http: HttpClient, private router: Router ) { }
+
+  addCar(Car): Observable<CarModule>{
+    return this.http.post<CarModule>(API_PATH, Car, {responseType: 'json'} );
+  }
+  getAllCar(): Observable<CarModule[]>{
+     return this.http.get<CarModule[]>(API_PATH, {responseType: 'json'});
+  }
+  getCarById(id): Observable<CarModule>{
+    return this.http.get<CarModule>(API_PATH + '/' + id, {responseType: 'json'});
+  }
+  editeCar(id, Car: any): Observable<CarModule>{
+    return this.http.put<CarModule>(API_PATH + '/' + id, Car, {responseType: 'json'} );
+  }
+  deleteCar(id): Observable<CarModule>{
+    return this.http.delete<CarModule>(API_PATH + '/' + id, {responseType: 'json'});
+  }
 }

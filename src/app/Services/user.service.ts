@@ -31,8 +31,8 @@ export class UserService {
   getUserById(id): Observable<UserModule> {
     return this.http.get<UserModule>(API_PATH + '/' + id, { responseType: 'json' });
   }
-  updateUser(id): Observable<UserModule>{
-    return this.http.put<UserModule>(API_PATH + '/' + id, { responseType: 'json' });
+  updateUser(id, User: any): Observable<UserModule>{
+    return this.http.put<UserModule>(API_PATH + '/' + id, User, { responseType: 'json' });
   }
   deleteUser(id): Observable<any>{
     return this.http.delete<UserModule>(API_PATH + '/' + id , {responseType: 'json'});

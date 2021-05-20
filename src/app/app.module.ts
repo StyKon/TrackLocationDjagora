@@ -23,7 +23,7 @@ import { FooterComponent } from './Views/footer/footer.component';
 import { NavbarComponent } from './Views/navbar/navbar.component';
 import { LeftbarComponent } from './Views/leftbar/leftbar.component';
 import { ConfirmationDialogComponent } from './Views/confirmation-dialog/confirmation-dialog.component';
-
+import { LoginComponent } from './Views/login/login.component';
 
 @NgModule({
   declarations: [
@@ -46,6 +46,7 @@ import { ConfirmationDialogComponent } from './Views/confirmation-dialog/confirm
     FooterComponent,
     NavbarComponent,
     LeftbarComponent,
+    LoginComponent,
     ConfirmationDialogComponent
   ],
   imports: [

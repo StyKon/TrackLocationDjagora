@@ -34,7 +34,6 @@
                         <th>Cin</th>
                         <th>Phone</th>
                         <th>Passport Number</th>
-                        <th>Password</th>
                         <th> Actions </th>
                     </tr>
                 </thead>
@@ -47,9 +46,8 @@
                         <td>{{user.cin}}</td>
                         <td>{{user.numTel}}</td>
                         <td>{{user.numPassport}}</td>
-                        <td>{{user.password}}</td>
                          <td>
-	                     	<button type="button" isAddMode=false class="btn btn-outline-warning waves-effect waves-light m-1"> <i class="fa fa-edit"></i> <span>Edit</span> </button>
+	                     	<button type="button" routerLink="edit/{{user.userId}}" isAddMode=false class="btn btn-outline-warning waves-effect waves-light m-1"> <i class="fa fa-edit"></i> <span>Edit</span> </button>
 	                        <button type="button" (click)="openConfirmationDialog(user.userId)" class="btn btn-outline-danger waves-effect waves-light m-1"> <i class="fa fa fa-trash-o"></i> <span>Delete</span> </button>
                         </td>
                     </tr>
@@ -64,7 +62,6 @@
                       <th>Cin</th>
                       <th>Phone</th>
                       <th>Passport Number</th>
-                      <th>Password</th>
                       <th> Actions </th>
                     </tr>
                 </tfoot>

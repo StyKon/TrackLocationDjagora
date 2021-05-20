@@ -6,8 +6,11 @@ import { IndexCarComponent } from './Views/Car/index-car/index-car.component';
 import { IndexFamilyCarComponent } from './Views/FamilyCar/index-family-car/index-family-car.component';
 import { IndexTypeCarComponent } from './Views/TypeCar/index-type-car/index-type-car.component';
 import { AddUserComponent } from './Views/User/add-user/add-user.component';
+import { EditUserComponent } from './Views/User/edit-user/edit-user.component';
 import { IndexUserComponent } from './Views/User/index-user/index-user.component';
+import { LoginComponent } from './Views/login/login.component';
 const routes: Routes = [
+  { path: 'login' , component: LoginComponent},
   { path: 'test' , component: AddUserComponent},
   { path: 'car' , component: IndexCarComponent},
   { path: 'car/add' , component: AddCarComponent},
@@ -16,6 +19,7 @@ const routes: Routes = [
   { path: 'familycar' , component: IndexFamilyCarComponent},
   { path: 'user' , component: IndexUserComponent},
   { path: 'user/add' , component: AddUserComponent},
+  { path: 'user/edit/:id' , component: EditUserComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
