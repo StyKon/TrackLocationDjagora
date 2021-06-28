@@ -54,7 +54,7 @@
                 <div class="form-group row">
                   <label for="input-5" class="col-sm-2 col-form-label">Date Of Circulation</label>
                   <div class="col-sm-10">
-                    <input type="text" class="form-control form-control-rounded" id="input-5" formControlName="DateCirculation" name="DateCirculation" required>
+                    <input type="date" class="form-control form-control-rounded" id="input-5" formControlName="DateCirculation" name="DateCirculation" required>
                   </div>
                 </div>
 
@@ -67,7 +67,7 @@
                 <div class="form-group row">
                   <label for="input-6" class="col-sm-2 col-form-label">Family Car</label>
                   <div class="col-sm-10">
-                    <select name="FamilyCarId" class="form-control single-select">
+                    <select name="FamilyCarId" formControlName="FamilyCarId" class="form-control single-select">
                       <option *ngFor="let familycar of familycars"
                       [ngValue]="familycar.familyCarId">{{familycar.nameFamily}}</option>
 
@@ -77,7 +77,7 @@
                 <div class="form-group row">
                   <label for="input-7" class="col-sm-2 col-form-label">User</label>
                   <div class="col-sm-10">
-                    <select class="form-control single-select" id="input-7" name="UserId" required>
+                    <select class="form-control single-select" id="input-7" name="UserId" formControlName="UserId" required>
                       <option *ngFor="let user of users"
                       [ngValue]="user.userId">{{user.cin}}</option>
 
@@ -87,10 +87,9 @@
                 <div class="form-group row">
                   <label for="input-7" class="col-sm-2 col-form-label">Type Car</label>
                   <div class="col-sm-10">
-                    <select class="form-control single-select" id="input-7" name="UserId" required>
+                    <select class="form-control single-select" id="input-7" formControlName="TypeCarId" name="TypeCarId" required>
                       <option *ngFor="let typecar of typecars"
-                      [ngValue]="typecar.typeCarID">{{typecar.nameType}}</option>
-
+                      [ngValue]="typecar.typeCarId">{{typecar.nameType}}</option>
                     </select>
                   </div>
                 </div>

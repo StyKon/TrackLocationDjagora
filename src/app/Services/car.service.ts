@@ -22,7 +22,7 @@ export class CarService {
   CarId: number;
   constructor(private http: HttpClient, private router: Router ) { }
 
-  addCar(Car): Observable<CarModule>{
+  addCar(Car: CarModule): Observable<CarModule>{
     return this.http.post<CarModule>(API_PATH, Car, {responseType: 'json'} );
   }
   getAllCar(): Observable<CarModule[]>{

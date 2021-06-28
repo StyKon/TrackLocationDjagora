@@ -17,16 +17,11 @@ export class AuthService {
 
   constructor(private http: HttpClient , private tokenService: TokenService , private router: Router) { }
 
-  signIn(user: any ): Promise<any>{
-    return new Promise((resolve, reject) => {
-      this.http.post<any>(AUTH_API + 'signin', user)
-        .subscribe((res: any) => {
-          this.tokenService.saveToken(res.accessToken);
-          this.tokenService.saveUser(res.Email);
-          this.tokenService.saveUserId(res.UserId);
-          this.router.navigate(['profile']);
-        });
-    });
+  signIn(email: string, password: string): Observable<any> {
+    return this.http.post(AUTH_API + 'signin', {
+      email,
+      password
+    }, httpOptions);
   }
   register(user: UserModule): Promise<any>{
     return new Promise((resolve, reject) => {

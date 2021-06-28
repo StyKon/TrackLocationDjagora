@@ -31,23 +31,20 @@
                         <th>Place numbers</th>
                         <th>Matricule</th>
                         <th>Total of Km(s)</th>
-                        <th>Config Car</th>
                         <th>User Car</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td> 1 </td>
-                        <td> X7</td>
-                        <td>5</td>
-                        <td> 125 TUN 2031</td>
-                        <td> 125700</td>
-                        <td> BMW - 4*4 </td>
-                        <td> Khalil Frikha </td>
+                    <tr *ngFor="let car of cars; let i = index" [attr.data-index]="i">
+                        <td>{{i}}</td>
+                        <td>{{car.nameCar}}</td>
+                        <td>{{car.numberPlace}}</td>
+                        <td>{{car.matricule}}</td>
+                        <td>{{car.totKm}}</td>
+                        <td>{{car.userId}}</td>
                         <td>
-                          <button type="button" class="btn btn-outline-warning waves-effect waves-light m-1"> <i class="fa fa-edit"></i> <span>Edit</span> </button>
-                         <button type="button" class="btn btn-outline-danger waves-effect waves-light m-1"> <i class="fa fa fa-trash-o"></i> <span>Delete</span> </button>
+                          <button type="button" (click)="openConfirmationDialog(car.carId)" class="btn btn-outline-danger waves-effect waves-light m-1"> <i class="fa fa fa-trash-o"></i> <span>Delete</span> </button>
                         </td>
                     </tr>
                 </tbody>
@@ -58,7 +55,6 @@
                         <th>Place numbers</th>
                         <th>Matricule</th>
                         <th>Total of Km(s)</th>
-                        <th>Config Car</th>
                         <th>User Car</th>
                         <th>Actions</th>
                     </tr>

@@ -17,7 +17,7 @@ export class CarModule {
   Matricule: number;
   DateCirculation: Date;
   TotKm: number;
-  FamilyCarID: number;
-  UserID: number;
-  TypeCarID: number;
+  FamilyCarId: number;
+  UserId: number;
+  TypeCarId: number;
 }

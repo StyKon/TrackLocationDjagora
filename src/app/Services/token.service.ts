@@ -1,4 +1,6 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserModule } from '../Models/user/user.module';
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
@@ -8,7 +10,7 @@ const USER_ID = 'userId';
 })
 export class TokenService {
 
-  constructor(private user: UserModule) { }
+  constructor(private http: HttpClient , private router: Router) { }
   public signOut(): void {
     window.sessionStorage.clear();
   }

@@ -43,17 +43,18 @@ export class AddCarComponent implements OnInit {
     this.getAllTypeCar();
   }
   onSubmit(){
-    this.carService.addCar(this.submitForm.value).subscribe(res =>
-      {
-        this.router.navigate(['car']);
-      });
+    this.carService.addCar(this.submitForm.value).subscribe((): void => {
+       this.router.navigate(['car']);
+      }, (err) => {
+        console.log(this.submitForm.value);
+        console.log(err);
+    });
   }
   getAllFamilyCar(): void {
     this.familyCarService.getAllFamilyCar()
       .subscribe(
         data => {
           this.familycars = data;
-          console.log(data);
         },
         error => {
           console.log(error);
@@ -64,7 +65,6 @@ export class AddCarComponent implements OnInit {
       .subscribe(
         data => {
           this.typecars = data;
-          console.log(data);
         },
         error => {
           console.log(error);
@@ -75,7 +75,6 @@ export class AddCarComponent implements OnInit {
       .subscribe(
         data => {
           this.users = data;
-          console.log(data);
         },
         error => {
           console.log(error);
