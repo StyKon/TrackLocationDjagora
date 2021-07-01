@@ -44,6 +44,8 @@
                         <td>{{car.totKm}}</td>
                         <td>{{car.userId}}</td>
                         <td>
+                          <button type="button"  class="btn btn-outline-warning waves-effect waves-light m-1"> <i class="fa fa-edit"></i> <span>Edit</span> </button>
+
                           <button type="button" (click)="openConfirmationDialog(car.carId)" class="btn btn-outline-danger waves-effect waves-light m-1"> <i class="fa fa fa-trash-o"></i> <span>Delete</span> </button>
                         </td>
                     </tr>
