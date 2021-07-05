@@ -9,17 +9,23 @@ import { AddUserComponent } from './Views/User/add-user/add-user.component';
 import { EditUserComponent } from './Views/User/edit-user/edit-user.component';
 import { IndexUserComponent } from './Views/User/index-user/index-user.component';
 import { LoginComponent } from './Views/login/login.component';
+import { AuthGuard } from './_helpers/auth.guard';
+import { HomeComponent } from './Views/home/home.component';
+import { IndexLocationComponent } from './Views/Location/index-location/index-location.component';
+import { ShowTripeComponent } from './Views/show-tripe/show-tripe.component';
 const routes: Routes = [
   { path: 'login' , component: LoginComponent},
-  { path: 'test' , component: AddUserComponent},
-  { path: 'car' , component: IndexCarComponent},
-  { path: 'car/add' , component: AddCarComponent},
-  { path: 'car/edit' , component: EditCarComponent},
-  { path: 'typecar' , component: IndexTypeCarComponent},
-  { path: 'familycar' , component: IndexFamilyCarComponent},
-  { path: 'user' , component: IndexUserComponent},
-  { path: 'user/add' , component: AddUserComponent},
-  { path: 'user/edit/:id' , component: EditUserComponent},
+  { path: 'home' , component: HomeComponent , canActivate: [AuthGuard]},
+  { path: 'car' , component: IndexCarComponent , canActivate: [AuthGuard]},
+  { path: 'car/add' , component: AddCarComponent , canActivate: [AuthGuard]},
+  { path: 'car/edit' , component: EditCarComponent , canActivate: [AuthGuard]},
+  { path: 'typecar' , component: IndexTypeCarComponent , canActivate: [AuthGuard]},
+  { path: 'familycar' , component: IndexFamilyCarComponent , canActivate: [AuthGuard]},
+  { path: 'user' , component: IndexUserComponent , canActivate: [AuthGuard]},
+  { path: 'user/add' , component: AddUserComponent , canActivate: [AuthGuard]},
+  { path: 'user/edit/:id' , component: EditUserComponent , canActivate: [AuthGuard]},
+  { path: 'listrips' , component: IndexLocationComponent , canActivate: [AuthGuard] },
+  { path: 'showtrip/:id_user/:loc_id' , component: ShowTripeComponent , canActivate: [AuthGuard]},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];

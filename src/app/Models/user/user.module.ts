@@ -19,4 +19,5 @@ export class UserModule {
   numPassport: string;
   password: string;
   typeUser: string;
+  createdByAdminID: number;
 }

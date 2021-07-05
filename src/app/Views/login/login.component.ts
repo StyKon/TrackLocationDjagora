@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { TokenService } from 'src/app/Services/token.service';
 
@@ -13,11 +13,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
   constructor(private authService: AuthService,
-    private tokenService: TokenService,
     private formBuilder: FormBuilder,
     private router: Router) { }
 
@@ -31,20 +27,12 @@ export class LoginComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   login() {
-    this.authService.signIn(this.f.email.value, this.f.password.value).subscribe(
-      data => {
-        this.tokenService.saveToken(data.accessToken);
-        this.tokenService.saveUser(data);
-        console.log(data);
-        this.isLoginFailed = false;
-        this.isLoggedIn = true;
-        this.router.navigate(['car']);
-      },
-      err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
-      }
-    );
+    const loginRequest: any = {
+      email: this.f.email.value,
+      password: this.f.password.value
+    };
+
+    this.authService.signIn(loginRequest);
   }
 
 }

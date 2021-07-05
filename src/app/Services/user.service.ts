@@ -37,4 +37,12 @@ export class UserService {
   deleteUser(id): Observable<any>{
     return this.http.delete<UserModule>(API_PATH + '/' + id , {responseType: 'json'});
   }
+
+  getAllUserManagerForSuperUser(id: any , type: any): Observable<UserModule[]> {
+    return this.http.get<UserModule[]>(API_PATH + '/' + id + '/type/' + type, { responseType: 'json' });
+  }
+  getAllDriversForUserManager(id: any , type: any): Observable<UserModule[]> {
+    return this.http.get<UserModule[]>(API_PATH + '/' + id + '/typeuser/' + type, { responseType: 'json' });
+  }
+
 }

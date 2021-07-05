@@ -10,14 +10,14 @@
 <div class="media align-items-center user-pointer collapsed" data-toggle="collapse" data-target="#user-dropdown">
   <div class="avatar"><img class="mr-3 side-user-img" src="assets/assets/images/profil.png" alt="user avatar"></div>
     <div class="media-body">
-      <h6 class="side-user-name">Super User</h6>
+      <h6 class="side-user-name">{{this.username}}</h6>
     </div>
   </div>
   <div id="user-dropdown" class="collapse">
   <ul class="user-setting-menu">
         <li><a href="javaScript:void();"><i class="icon-user"></i>  My Profile</a></li>
         <li><a href="javaScript:void();"><i class="icon-settings"></i> Setting</a></li>
-  <li><a href="javaScript:void();"><i class="icon-power"></i> Logout</a></li>
+  <li><a (click)="this.logOut()"><i class="icon-power"></i> Logout</a></li>
   </ul>
   </div>
 </div>
@@ -33,49 +33,49 @@
 
 </ul>
   </li>
-  <li>
+  <li *ngIf="this.UserManagerValid()">
     <a href="javaScript:void();" class="waves-effect">
       <i class="zmdi zmdi-layers"></i>
       <span>Config Car</span> <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul class="sidebar-submenu">
-<li><a href="ui-typography.html"><i class="zmdi zmdi-dot-circle-alt"></i>Consulting Type Car</a></li>
-    <li><a href="ui-cards.html"><i class="zmdi zmdi-dot-circle-alt"></i>Consulting Family Car</a></li>
+    <li *ngIf="this.UserManagerValid()"><a [routerLink]="['typecar']"><i class="zmdi zmdi-dot-circle-alt"></i>Consulting Type Car</a></li>
+    <li *ngIf="this.UserManagerValid()"><a [routerLink]="['familycar']"><i class="zmdi zmdi-dot-circle-alt"></i>Consulting Family Car</a></li>
     </ul>
   </li>
-  <li>
+  <li *ngIf="this.UserManagerValid()">
     <a href="javaScript:void();" class="waves-effect">
       <i class="zmdi zmdi-card-travel"></i>
       <span>Consulting Car</span>
       <i class="fa fa-angle-left pull-right"></i>
     </a>
     <ul class="sidebar-submenu">
-      <li><a href="components-range-slider.html"><i class="zmdi zmdi-dot-circle-alt"></i>Add/Edit Car</a></li>
-      <li><a href="components-image-carousel.html"><i class="zmdi zmdi-dot-circle-alt"></i> List Cars</a></li>
+      <li><a  [routerLink]="['car/add']"><i class="zmdi zmdi-dot-circle-alt"></i>Add Car</a></li>
+      <li><a [routerLink]="['car']"><i class="zmdi zmdi-dot-circle-alt"></i> List Cars</a></li>
 
     </ul>
   </li>
-  <li>
+  <li *ngIf="this.SuperUserValid()">
     <a href="javaScript:void();" class="waves-effect">
       <!--  #For_SuperUser-->
       <i class="zmdi zmdi-chart"></i><span>Consulting User Manager</span>
       <i class="fa fa-angle-left float-right"></i>
     </a>
     <ul class="sidebar-submenu">
-      <li><a href="charts-chartjs.html"><i class="zmdi zmdi-dot-circle-alt"></i> Add/Edite User Manager </a></li>
-      <li><a href="charts-apex.html"><i class="zmdi zmdi-dot-circle-alt"></i> Show List User Manager </a></li>
+      <li><a [routerLink]="['user/add']"><i class="zmdi zmdi-dot-circle-alt"></i> Add User Manager </a></li>
+      <li><a [routerLink]="['user']"><i class="zmdi zmdi-dot-circle-alt"></i> Show List User Manager </a></li>
 
     </ul>
     </li>
-  <li>
+  <li *ngIf="this.UserManagerValid()">
     <a href="javaScript:void();" class="waves-effect">
       <!--  #For_SuperUser-->
       <i class="zmdi zmdi-widgets"></i> <span>Consulting User Driver</span>
       <i class="fa fa-angle-left float-right"></i>
     </a>
     <ul class="sidebar-submenu">
-      <li><a href="widgets-static.html"><i class="zmdi zmdi-dot-circle-alt"></i>Add/Edite Driver </a></li>
-      <li><a href="widgets-data.html"><i class="zmdi zmdi-dot-circle-alt"></i>Show List Driver</a></li>
+      <li><a [routerLink]="['user/add']"><i class="zmdi zmdi-dot-circle-alt"></i>Add/Edite Driver </a></li>
+      <li><a [routerLink]="['user']"><i class="zmdi zmdi-dot-circle-alt"></i>Show List Driver</a></li>
     </ul>
     </li>
   <li>
@@ -85,16 +85,15 @@
     </a>
     <ul class="sidebar-submenu">
       <!-- For UserManager -->
-      <li><a href="maps-google.html"><i class="zmdi zmdi-dot-circle-alt"></i> Show Real Time Tracking </a></li>
+      <li *ngIf="this.UserManagerValid()"><a href="maps-google.html"><i class="zmdi zmdi-dot-circle-alt"></i> Show Real Time Tracking </a></li>
 
       <!-- For Driver -->
-      <li><a href="maps-google.html"><i class="zmdi zmdi-dot-circle-alt"></i> Show Real Time Tracking </a></li>
+      <li *ngIf="this.SuperUserValid()"><a href="maps-google.html"><i class="zmdi zmdi-dot-circle-alt"></i> Show Real Time Tracking </a></li>
 
       <!-- Show Liste Tracking -> Filtering By (Car or Driver) #For_UserManager-->
-      <li><a href="maps-vector.html"><i class="zmdi zmdi-dot-circle-alt"></i> Show Liste Tracking </a></li>
+      <li *ngIf="this.UserManagerValid()"><a [routerLink]="['listrips']"><i class="zmdi zmdi-dot-circle-alt"></i> Show Liste Tracking </a></li>
         <!-- Show Liste Tracking For Driver -->
-        <li><a href="maps-vector.html"><i class="zmdi zmdi-dot-circle-alt"></i> Show Liste Tracking </a></li>
-          <!-- Start Tracking For Driver -->
-        <li><a href="maps-vector.html"><i class="zmdi zmdi-dot-circle-alt"></i> Start Tracking Tracking </a></li>
+        <li *ngIf="this.ConducteurValid()"><a [routerLink]="['listrips']"><i class="zmdi zmdi-dot-circle-alt"></i> Show Liste Tracking </a></li>
+
     </ul>
     </li>

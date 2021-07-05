@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CarModule } from '../car/car.module';
+import { UserModule } from '../user/user.module';
+
 
 
 
@@ -16,4 +19,8 @@ export class LocationModule {
   Speed: number;
   startDate: Date;
   endDate: Date;
+  car: CarModule[];
+  tracks: TrackEvent[];
+  user: UserModule[];
  }
+

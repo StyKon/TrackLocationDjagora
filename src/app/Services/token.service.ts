@@ -34,7 +34,7 @@ export class TokenService {
   public getUser(): any {
     return JSON.parse(sessionStorage.getItem(USER_KEY));
   }
-  public saveUserId(UserId: UserModule): any {
+  public saveUserId(UserId: any): any {
     window.sessionStorage.removeItem(USER_ID);
     window.sessionStorage.setItem(USER_ID, JSON.stringify(UserId));
   }

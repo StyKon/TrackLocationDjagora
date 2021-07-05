@@ -24,6 +24,11 @@ import { NavbarComponent } from './Views/navbar/navbar.component';
 import { LeftbarComponent } from './Views/leftbar/leftbar.component';
 import { ConfirmationDialogComponent } from './Views/confirmation-dialog/confirmation-dialog.component';
 import { LoginComponent } from './Views/login/login.component';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+
+import { ShowTripeComponent } from './Views/show-tripe/show-tripe.component';
+import { HomeComponent } from './Views/home/home.component';
+import { AuthGuard } from './_helpers/auth.guard';
 
 @NgModule({
   declarations: [
@@ -47,6 +52,8 @@ import { LoginComponent } from './Views/login/login.component';
     NavbarComponent,
     LeftbarComponent,
     LoginComponent,
+    ShowTripeComponent,
+    HomeComponent,
     ConfirmationDialogComponent
   ],
   imports: [
@@ -56,7 +63,7 @@ import { LoginComponent } from './Views/login/login.component';
     ReactiveFormsModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders, AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

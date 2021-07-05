@@ -1,0 +1,41 @@
+<app-navbar></app-navbar>
+<app-leftbar></app-leftbar>
+<div class="clearfix"></div>
+  <div class="content-wrapper">
+    <div class="container-fluid">
+    <!-- Breadcrumb-->
+     <div class="row pt-2 pb-2">
+        <div class="col-sm-9">
+		    <h4 class="page-title">Show Tripe</h4>
+		    <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="javaScript:void();">Tracking</a></li>
+            <li class="breadcrumb-item"><a href="javaScript:void();">Location Driver</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Show Map</li>
+         </ol>
+	   </div>
+
+     </div>
+    <!-- End Breadcrumb-->
+
+    
+
+    <div class="row">
+        <div class="col-lg-12">
+        
+            <div class="card">
+                <div class="card-header text-uppercase">Styled Map</div>
+                 <div class="card-body">
+                  <div id="style-map" class="gmaps"></div>
+                 </div>
+             </div>
+             <div class="card">
+                <div class="card-body">
+                     Car : {{this.car['Matricule'] }}
+                     User Name : {{this.user['firstName']}} {{this.user['lastName']}}  
+                 </div>
+             </div>
+          </div>
+      </div>
+    </div><!--End Row-->
+</div>
+<!-- End container-fluid-->
