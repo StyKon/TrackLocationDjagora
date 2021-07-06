@@ -13,6 +13,7 @@ export class LeftbarComponent implements OnInit {
   user: UserModule;
   // tslint:disable-next-line:ban-types
   username: String;
+  role: string;
   constructor(private authService: AuthService,
               private router: Router,
               private tokenService: TokenService) { }
